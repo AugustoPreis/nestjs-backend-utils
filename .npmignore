@@ -1,0 +1,11 @@
+src/
+test/
+coverage/
+*.spec.ts
+*.test.ts
+tsconfig.json
+eslint.config.mjs
+.prettierrc
+.gitignore
+.npmignore
+TODO.md
