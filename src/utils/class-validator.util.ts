@@ -1,3 +1,4 @@
+import { EValidationErrorMessages } from '@constants';
 import { ValidationError } from '@nestjs/common';
 
 /**
@@ -33,4 +34,20 @@ export function extractValidationErrorMessages(
   }
 
   return messages;
+}
+
+export function applyMessage(
+  fieldName: string,
+  message: EValidationErrorMessages,
+  values?: Record<string, unknown>,
+): string {
+  let finalMessage = message.replace('{field}', fieldName);
+
+  if (values) {
+    for (const [key, value] of Object.entries(values)) {
+      finalMessage = finalMessage.replace(`{${key}}`, String(value));
+    }
+  }
+
+  return finalMessage;
 }
