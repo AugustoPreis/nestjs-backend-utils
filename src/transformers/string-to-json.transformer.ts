@@ -1,0 +1,20 @@
+import { Transform, TransformFnParams } from 'class-transformer';
+
+import { StringToJsonOptions } from '@transformers';
+
+/**
+ * Converte string JSON para objeto
+ */
+export function StringToJson(
+  options: StringToJsonOptions = {},
+): PropertyDecorator {
+  return Transform(({ value }: TransformFnParams) => {
+    if (typeof value !== 'string') return value;
+
+    try {
+      return JSON.parse(value, options.reviver);
+    } catch {
+      return options.fallback ?? value;
+    }
+  });
+}
