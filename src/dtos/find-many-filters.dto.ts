@@ -1,7 +1,4 @@
-import { IsEnum, IsOptional } from 'class-validator';
-import { ApiPropertyOptional } from '@nestjs/swagger';
-
-import { IsValidNumber } from '@validators';
+import { Property, PropertyType } from '@decorators';
 import { EOrder } from '@enums';
 
 /**
@@ -14,57 +11,58 @@ export class FindManyFiltersDTO {
   /**
    * Limite de registros por página
    */
-  @ApiPropertyOptional({
+  @Property({
+    type: PropertyType.NUMBER,
+    name: 'Registros por página',
     description: 'Número de registros por página',
-    default: 10,
-    minimum: 1,
-  })
-  @IsValidNumber({
-    name: 'Número de registros por página',
     required: false,
-    allowString: true,
-    integerOnly: true,
-    min: 1,
+    defaultValue: 10,
+    validation: {
+      min: 1,
+      integerOnly: true,
+    },
   })
   public take: number = 10;
 
   /**
    * Número da página
    */
-  @ApiPropertyOptional({
-    description: 'Número da página',
-    default: 1,
-    minimum: 1,
-  })
-  @IsValidNumber({
+  @Property({
+    type: PropertyType.NUMBER,
     name: 'Número da página',
+    description: 'Número da página',
     required: false,
-    allowString: true,
-    integerOnly: true,
-    min: 1,
+    defaultValue: 1,
+    validation: {
+      min: 1,
+      integerOnly: true,
+    },
   })
   public page: number = 1;
 
   /**
    * Campo de ordenação
    */
-  @ApiPropertyOptional({
+  @Property({
+    type: PropertyType.STRING,
+    name: 'Campo para ordenação',
     description: 'Campo para ordenação',
+    required: false,
     example: 'createdAt',
   })
-  @IsOptional()
   public sort?: string;
 
   /**
    * Direção da ordenação
    */
-  @ApiPropertyOptional({
+  @Property({
+    type: PropertyType.ENUM,
+    name: 'Direção da ordenação',
     description: 'Direção da ordenação',
-    enum: EOrder,
-    default: EOrder.DESC,
+    required: false,
+    defaultValue: EOrder.DESC,
+    enumValues: EOrder,
   })
-  @IsOptional()
-  @IsEnum(EOrder, { message: 'Campo "Direção da ordenação" inválido' })
   public order: EOrder = EOrder.DESC;
 
   /**
