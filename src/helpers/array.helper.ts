@@ -10,6 +10,13 @@ export class ArrayHelper {
   }
 
   /**
+   * Verifica se é um array e se não está vazio
+   */
+  public static isNotEmpty<T>(arr: unknown): arr is T[] {
+    return Array.isArray(arr) && arr.length > 0;
+  }
+
+  /**
    * Remove duplicatas do array
    */
   public static unique<T>(arr: T[]): T[] {
