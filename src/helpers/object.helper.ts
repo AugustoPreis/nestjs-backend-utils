@@ -80,8 +80,25 @@ export class ObjectHelper {
   /**
    * Comparação profunda de objetos
    */
-  public static isEqual(obj1: unknown, obj2: unknown): boolean {
-    return JSON.stringify(obj1) === JSON.stringify(obj2);
+  public static isEqual(obj1: object, obj2: object): boolean {
+    if (!this.isObject(obj1) || !this.isObject(obj2)) return false;
+
+    const object1Keys = Object.keys(obj1);
+    const object2Keys = Object.keys(obj2);
+
+    if (object1Keys.length !== object2Keys.length) return false;
+
+    for (const key of object1Keys) {
+      const val1 = obj1[key];
+      const val2 = obj2[key];
+
+      const areObjects = this.isObject(val1) && this.isObject(val2);
+
+      const isValid = areObjects ? this.isEqual(val1, val2) : val1 === val2;
+      if (!isValid) return false;
+    }
+
+    return true;
   }
 
   /**
