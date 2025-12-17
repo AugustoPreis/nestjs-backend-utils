@@ -5,8 +5,8 @@ export class ArrayHelper {
   /**
    * Verifica se array está vazio
    */
-  public static isEmpty(arr: unknown[]): boolean {
-    return !Array.isArray(arr) || arr.length === 0;
+  public static isEmpty(arr: unknown): boolean {
+    return !arr || !Array.isArray(arr) || arr.length === 0;
   }
 
   /**
@@ -44,6 +44,8 @@ export class ArrayHelper {
    * Divide array em chunks
    */
   public static chunk<T>(arr: T[], size: number): T[][] {
+    size = Math.max(1, size);
+
     const chunks: T[][] = [];
 
     for (let i = 0; i < arr.length; i += size) {
