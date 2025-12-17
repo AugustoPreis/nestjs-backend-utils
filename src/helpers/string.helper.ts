@@ -125,9 +125,13 @@ export class StringHelper {
     search: string,
     caseSensitive: boolean = true,
   ): number {
+    if (!search) return 0;
+
     const source = caseSensitive ? str : str.toLowerCase();
     const target = caseSensitive ? search : search.toLowerCase();
 
-    return (source.match(new RegExp(target, 'g')) || []).length;
+    const escapedTarget = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+    return (source.match(new RegExp(escapedTarget, 'g')) || []).length;
   }
 }
