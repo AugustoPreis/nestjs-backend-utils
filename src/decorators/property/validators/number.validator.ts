@@ -1,11 +1,4 @@
-import {
-  IsNumber,
-  IsInt,
-  Min,
-  Max,
-  IsPositive,
-  IsNegative,
-} from 'class-validator';
+import { IsNumber, IsInt, Min, Max } from 'class-validator';
 
 import { NumberValidationOptions } from '@decorators';
 import { applyMessage } from '@utils';
@@ -56,7 +49,7 @@ export function buildNumberValidators(
 
   if (validation.allowNegative === false) {
     decorators.push(
-      IsPositive({
+      Min(0, {
         message: applyMessage(
           propertyName,
           EValidationErrorMessages.POSITIVE_NUMBER,
@@ -67,7 +60,7 @@ export function buildNumberValidators(
 
   if (validation.allowPositive === false) {
     decorators.push(
-      IsNegative({
+      Max(0, {
         message: applyMessage(
           propertyName,
           EValidationErrorMessages.NEGATIVE_NUMBER,
