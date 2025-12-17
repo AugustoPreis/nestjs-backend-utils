@@ -49,7 +49,7 @@ export abstract class BaseEntity {
    * Data de soft delete
    */
   @DeleteDateColumn({ name: 'deleted_at', nullable: true })
-  public deletedAt?: Date;
+  public deletedAt?: Date | null;
 
   /**
    * Verifica se o registro está ativo
@@ -84,6 +84,11 @@ export abstract class BaseEntity {
    */
   public deactivate(): void {
     this.status = EStatus.INACTIVE;
+  }
+
+  public restore(status: EStatus = EStatus.ACTIVE): void {
+    this.status = status;
+    this.deletedAt = null;
   }
 
   /**
