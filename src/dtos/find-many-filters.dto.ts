@@ -69,9 +69,9 @@ export class FindManyFiltersDTO {
    * Calcula o offset para a query
    */
   public getOffset(): number {
-    const pageIndex = (this.page || 1) - 1;
-    const take = this.take || 10;
+    const page = Math.max(1, this.page || 1);
+    const take = Math.max(1, this.take || 10);
 
-    return pageIndex * take;
+    return (page - 1) * take;
   }
 }
