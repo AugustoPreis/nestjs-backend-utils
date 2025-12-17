@@ -6,7 +6,7 @@ export class ArrayHelper {
    * Verifica se array está vazio
    */
   public static isEmpty(arr: unknown[]): boolean {
-    return arr.length === 0;
+    return !Array.isArray(arr) || arr.length === 0;
   }
 
   /**
