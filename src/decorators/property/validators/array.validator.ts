@@ -19,7 +19,7 @@ export function buildArrayValidators(
       ArrayMinSize(validation.minLength, {
         message: applyMessage(
           propertyName,
-          EValidationErrorMessages.MIN_LENGTH,
+          EValidationErrorMessages.MIN_ELEMENTS,
           {
             min: validation.minLength,
           },
