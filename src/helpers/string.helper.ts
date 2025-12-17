@@ -8,17 +8,24 @@ export class StringHelper {
   /**
    * Converte primeira letra para maiúscula
    */
-  public static capitalize(str: string, allWords: boolean = false): string {
+  public static capitalize(
+    str: string,
+    allWords: boolean = false,
+    lowercaseRest: boolean = true,
+  ): string {
     if (!str) return str;
 
     if (allWords) {
       return str
         .split(' ')
-        .map((word) => this.capitalize(word))
+        .map((word) => this.capitalize(word, false, lowercaseRest))
         .join(' ');
     }
 
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    const first = str.charAt(0).toUpperCase();
+    const rest = lowercaseRest ? str.slice(1).toLowerCase() : str.slice(1);
+
+    return first + rest;
   }
 
   /**
