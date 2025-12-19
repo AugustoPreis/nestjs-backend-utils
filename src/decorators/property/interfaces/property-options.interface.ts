@@ -1,6 +1,6 @@
 import { ApiPropertyOptions } from '@nestjs/swagger';
 
-import { PropertyType } from '@decorators';
+import { PropertyType } from '../enums/property-type.enum';
 
 type AllValidationOptions =
   | StringValidationOptions

@@ -1,12 +1,12 @@
 import { IsArray, ArrayMinSize, ArrayMaxSize } from 'class-validator';
 
-import { ArrayValidationOptions } from '@decorators';
-import { applyMessage } from '@utils';
-import { EValidationErrorMessages } from '@constants';
+import { ArrayValidationOptions } from '../interfaces/property-options.interface';
+import { applyMessage } from '../../../utils/class-validator.util';
+import { EValidationErrorMessages } from '../../../constants/validation-error-messages.constant';
 
 export function buildArrayValidators(
   propertyName: string,
-  validation: ArrayValidationOptions,
+  validation: ArrayValidationOptions = {},
 ): PropertyDecorator[] {
   const decorators: PropertyDecorator[] = [
     IsArray({

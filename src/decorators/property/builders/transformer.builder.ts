@@ -1,5 +1,7 @@
-import { Trim, ToLowerCase, ToUpperCase } from '@transformers';
-import { PropertyOptions } from '@decorators';
+import { Trim } from '../../../transformers/trim.transformer';
+import { ToLowerCase } from '../../../transformers/to-lowercase.transformer';
+import { ToUpperCase } from '../../../transformers/to-uppercase.transformer';
+import { PropertyOptions } from '../interfaces/property-options.interface';
 
 export function buildTransformDecorators(
   options: PropertyOptions,

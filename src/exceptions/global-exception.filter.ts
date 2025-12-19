@@ -9,8 +9,9 @@ import {
 import { ValidationError } from 'class-validator';
 import { v4 as uuidv4 } from 'uuid';
 
-import { ExceptionResponse, IHttpErrorParam } from '@exceptions';
-import { extractValidationErrorMessages } from '@utils';
+import { ExceptionResponse } from './exception-response';
+import { IHttpErrorParam } from './interfaces/http-error-param.interface';
+import { extractValidationErrorMessages } from '../utils/class-validator.util';
 
 /**
  * Filtro global para captura e tratamento de todas as exceções da aplicação

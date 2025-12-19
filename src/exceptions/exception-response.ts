@@ -2,7 +2,8 @@ import { HttpStatus } from '@nestjs/common';
 import { ArgumentsHost } from '@nestjs/common';
 import { Response } from 'express';
 
-import { IExceptionResponse, IHttpErrorParam } from '@exceptions';
+import { IExceptionResponse } from './interfaces/exception-response.interface';
+import { IHttpErrorParam } from './interfaces/http-error-param.interface';
 
 /**
  * Classe principal para padronização de respostas de erro HTTP

@@ -2,7 +2,7 @@ import { INestApplication, ValidationPipeOptions } from '@nestjs/common';
 import { ValidationPipe, BadRequestException } from '@nestjs/common';
 import { ValidationError } from 'class-validator';
 
-import { extractValidationErrorMessages } from '@utils';
+import { extractValidationErrorMessages } from '../utils/class-validator.util';
 
 /**
  * Configuração padrão para o ValidationPipe

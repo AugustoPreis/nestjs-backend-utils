@@ -21,8 +21,8 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 
-import { IEndpointOptions } from '@decorators';
-import { ArrayHelper } from '@helpers';
+import { IEndpointOptions } from './interfaces/endpoint-options.interface';
+import { ArrayHelper } from '../helpers/array.helper';
 
 /**
  * Decorator para definir endpoints REST com diversas opções

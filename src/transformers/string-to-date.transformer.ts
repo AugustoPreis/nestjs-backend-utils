@@ -2,7 +2,7 @@ import { parse } from 'date-fns';
 
 import { Transform, TransformFnParams } from 'class-transformer';
 
-import { StringToDateOptions } from '@transformers';
+import { StringToDateOptions } from './interfaces/string-to-date-options.interface';
 
 /**
  * Converte string para Date

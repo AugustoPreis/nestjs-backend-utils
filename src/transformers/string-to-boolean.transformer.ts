@@ -1,6 +1,6 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 
-import { StringToBooleanOptions } from '@transformers';
+import { StringToBooleanOptions } from './interfaces/string-to-boolean-options.interface';
 
 /**
  * Converte string para boolean

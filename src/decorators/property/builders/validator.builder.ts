@@ -2,22 +2,22 @@ import { IsOptional } from 'class-validator';
 
 import {
   ArrayValidationOptions,
-  buildArrayValidators,
-  buildBooleanValidators,
-  buildDateValidators,
-  buildEmailValidators,
-  buildEnumValidators,
-  buildJsonValidators,
-  buildNumberValidators,
-  buildObjectValidators,
-  buildStringValidators,
-  buildUrlValidators,
-  buildUuidValidators,
   NumberValidationOptions,
   PropertyOptions,
-  PropertyType,
   StringValidationOptions,
-} from '@decorators';
+} from '../interfaces/property-options.interface';
+import { PropertyType } from '../enums/property-type.enum';
+import { buildArrayValidators } from '../validators/array.validator';
+import { buildBooleanValidators } from '../validators/boolean.validator';
+import { buildDateValidators } from '../validators/date.validator';
+import { buildEmailValidators } from '../validators/email.validator';
+import { buildEnumValidators } from '../validators/enum.validator';
+import { buildJsonValidators } from '../validators/json.validator';
+import { buildNumberValidators } from '../validators/number.validator';
+import { buildObjectValidators } from '../validators/object.validator';
+import { buildStringValidators } from '../validators/string.validator';
+import { buildUrlValidators } from '../validators/url.validator';
+import { buildUuidValidators } from '../validators/uuid.validator';
 
 export function buildValidationDecorators(
   options: PropertyOptions,

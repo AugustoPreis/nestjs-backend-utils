@@ -1,4 +1,4 @@
-import { ArrayHelper } from '@helpers';
+import { ArrayHelper } from './array.helper';
 
 /**
  * Helper para manipulação de objetos

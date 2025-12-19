@@ -3,9 +3,9 @@ import { ApiPropertyOptions } from '@nestjs/swagger';
 import {
   NumberValidationOptions,
   PropertyOptions,
-  PropertyType,
   StringValidationOptions,
-} from '@decorators';
+} from '../interfaces/property-options.interface';
+import { PropertyType } from '../enums/property-type.enum';
 
 export function buildSwaggerOptions(
   options: PropertyOptions,

@@ -1,5 +1,6 @@
-import { EValidationErrorMessages } from '@constants';
 import { ValidationError } from '@nestjs/common';
+
+import { EValidationErrorMessages } from '../constants/validation-error-messages.constant';
 
 /**
  * Extrai todas as mensagens de erro do array de ValidationError

@@ -1,7 +1,7 @@
 import { IsObject } from 'class-validator';
 
-import { applyMessage } from '@utils';
-import { EValidationErrorMessages } from '@constants';
+import { applyMessage } from '../../../utils/class-validator.util';
+import { EValidationErrorMessages } from '../../../constants/validation-error-messages.constant';
 
 export function buildJsonValidators(propertyName: string): PropertyDecorator[] {
   return [

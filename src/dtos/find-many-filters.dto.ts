@@ -1,5 +1,6 @@
-import { Property, PropertyType } from '@decorators';
-import { EOrder } from '@enums';
+import { Property } from '../decorators/property/property.decorator';
+import { PropertyType } from '../decorators/property/enums/property-type.enum';
+import { EOrder } from '../enums/order.enum';
 
 /**
  * DTO base para filtros de listagem paginada

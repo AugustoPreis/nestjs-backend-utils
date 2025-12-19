@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
-import { LoggedUserOptions } from '@decorators';
+import { LoggedUserOptions } from './interfaces/logged-user-options.interface';
 
 /**
  * Decorator para injetar dados do usuário autenticado

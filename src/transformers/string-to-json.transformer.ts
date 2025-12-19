@@ -1,6 +1,6 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 
-import { StringToJsonOptions } from '@transformers';
+import { StringToJsonOptions } from './interfaces/string-to-json-options.interface';
 
 /**
  * Converte string JSON para objeto

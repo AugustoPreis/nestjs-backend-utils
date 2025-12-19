@@ -1,12 +1,10 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
-import {
-  PropertyOptions,
-  buildSwaggerOptions,
-  buildTransformDecorators,
-  buildValidationDecorators,
-} from '@decorators';
+import { PropertyOptions } from './interfaces/property-options.interface';
+import { buildSwaggerOptions } from './builders/swagger.builder';
+import { buildTransformDecorators } from './builders/transformer.builder';
+import { buildValidationDecorators } from './builders/validator.builder';
 
 export function Property(options: PropertyOptions): PropertyDecorator {
   const decorators: PropertyDecorator[] = [];

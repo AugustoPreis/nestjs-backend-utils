@@ -1,7 +1,7 @@
 import { ApiExtraModels, ApiResponse, getSchemaPath } from '@nestjs/swagger';
 import { applyDecorators, HttpStatus } from '@nestjs/common';
 
-import { ApiPaginatedResponseOptions } from '@decorators';
+import { ApiPaginatedResponseOptions } from './interfaces/api-paginated-response-options.interface';
 
 /**
  * Decorator para documentar respostas paginadas no Swagger

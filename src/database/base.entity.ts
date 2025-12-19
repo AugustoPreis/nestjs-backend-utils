@@ -7,7 +7,7 @@ import {
   Column,
 } from 'typeorm';
 
-import { EStatus } from '@enums';
+import { EStatus } from '../enums/status.enum';
 
 /**
  * Entidade base com campos comuns

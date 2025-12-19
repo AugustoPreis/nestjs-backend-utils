@@ -1,8 +1,8 @@
 import { IsNumber, IsInt, Min, Max } from 'class-validator';
 
-import { NumberValidationOptions } from '@decorators';
-import { applyMessage } from '@utils';
-import { EValidationErrorMessages } from '@constants';
+import { NumberValidationOptions } from '../interfaces/property-options.interface';
+import { applyMessage } from '../../../utils/class-validator.util';
+import { EValidationErrorMessages } from '../../../constants/validation-error-messages.constant';
 
 export function buildNumberValidators(
   propertyName: string,

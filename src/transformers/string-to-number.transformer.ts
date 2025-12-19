@@ -1,6 +1,6 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 
-import { StringToNumberOptions } from '@transformers';
+import { StringToNumberOptions } from './interfaces/string-to-number-options.interface';
 
 /**
  * Converte string para número
