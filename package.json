@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "description": "Conjunto completo de utilitários, validadores e helpers para NestJS",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
