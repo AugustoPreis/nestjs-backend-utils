@@ -6,6 +6,14 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AugustoPreis/nestjs-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AugustoPreis/nestjs-utils/issues"
+  },
+  "homepage": "https://github.com/AugustoPreis/nestjs-utils#readme",
   "scripts": {
     "build": "tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
