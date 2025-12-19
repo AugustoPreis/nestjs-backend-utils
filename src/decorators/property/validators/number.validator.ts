@@ -6,7 +6,7 @@ import { EValidationErrorMessages } from '../../../constants/validation-error-me
 
 export function buildNumberValidators(
   propertyName: string,
-  validation: NumberValidationOptions,
+  validation: NumberValidationOptions = {},
 ): PropertyDecorator[] {
   const decorators: PropertyDecorator[] = [];
 

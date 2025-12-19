@@ -6,7 +6,7 @@ import { EValidationErrorMessages } from '../../../constants/validation-error-me
 
 export function buildStringValidators(
   propertyName: string,
-  validation: StringValidationOptions,
+  validation: StringValidationOptions = {},
 ): PropertyDecorator[] {
   const decorators: PropertyDecorator[] = [
     IsString({

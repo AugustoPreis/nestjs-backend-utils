@@ -23,7 +23,7 @@ export function buildValidationDecorators(
   options: PropertyOptions,
 ): PropertyDecorator[] {
   const decorators: PropertyDecorator[] = [];
-  const { type, name, validation, enumValues, required = true } = options;
+  const { type, name, validation = {}, enumValues, required = true } = options;
   const propertyName = name || '?';
 
   if (!required) {

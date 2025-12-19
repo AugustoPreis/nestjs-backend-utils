@@ -17,7 +17,7 @@ export function buildSwaggerOptions(
     example,
     defaultValue,
     swagger = {},
-    validation,
+    validation = {},
     enumValues,
   } = options;
 
