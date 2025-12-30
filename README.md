@@ -7,16 +7,6 @@
 
 Complete set of utilities, validators, transformers and helpers for NestJS applications - Accelerate your development with reusable components following best practices.
 
-## Table of Contents
-
-- [Features](#-features)
-- [Installation](#-installation)
-- [Configuration](#️-configuration)
-- [Documentation](#-documentation)
-- [Quick Examples](#-quick-examples)
-- [Contributing](#-contributing)
-- [License](#-license)
-
 ## Installation
 
 ```bash
