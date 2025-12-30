@@ -1,91 +1,85 @@
-# Guia de Contribuição
+# Contribution Guide
 
-Obrigado por considerar contribuir com o NestJS Utils! Este documento fornece diretrizes para contribuir com o projeto.
+Thank you for considering contributing to NestJS Utils! This document provides guidelines for contributing to the project.
 
-## 📋 Índice
+## 📋 Table of Contents
 
-- [Código de Conduta](#código-de-conduta)
-- [Como Contribuir](#como-contribuir)
-- [Configuração do Ambiente](#configuração-do-ambiente)
-- [Padrões de Código](#padrões-de-código)
-- [Processo de Pull Request](#processo-de-pull-request)
-- [Reportando Bugs](#reportando-bugs)
-- [Sugerindo Melhorias](#sugerindo-melhorias)
+- [Code of Conduct](#code-of-conduct)
+- [How to Contribute](#how-to-contribute)
+- [Environment Setup](#environment-setup)
+- [Code Standards](#code-standards)
+- [Pull Request Process](#pull-request-process)
+- [Reporting Bugs](#reporting-bugs)
+- [Suggesting Improvements](#suggesting-improvements)
 
-## Código de Conduta
+## Code of Conduct
 
-Este projeto segue um Código de Conduta. Ao participar, você concorda em manter um ambiente respeitoso e inclusivo para todos.
+This project follows a Code of Conduct. By participating, you agree to maintain a respectful and inclusive environment for everyone.
 
-## Como Contribuir
+## How to Contribute
 
-Existem várias formas de contribuir:
+There are several ways to contribute:
 
-- 🐛 Reportar bugs
-- 💡 Sugerir novas funcionalidades
-- 📝 Melhorar a documentação
-- 🔧 Corrigir bugs existentes
-- ✨ Implementar novas funcionalidades
+- 🐛 Report bugs  
+- 💡 Suggest new features  
+- 📝 Improve documentation  
+- 🔧 Fix existing bugs  
+- ✨ Implement new features  
 
-## Configuração do Ambiente
+## Environment Setup
 
-### 1. Fork e Clone
+### 1. Fork and Clone
 
 ```bash
 git clone https://github.com/AugustoPreis/nestjs-backend-utils.git
 cd nestjs-backend-utils
-```
 
-### 2. Instalar Dependências
+
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Criar Branch
+### 3. Create a Branch
 
 ```bash
-git checkout -b feature/minha-funcionalidade
+git checkout -b feat/my-feature
 ```
 
-ou
+or
 
 ```bash
-git checkout -b fix/correcao-bug
+git checkout -b fix/bug-fix
 ```
 
-### 4. Executar Testes
-
-```bash
-npm test
-```
-
-### 5. Build
+### 4. Build
 
 ```bash
 npm run build
 ```
 
-## Padrões de Código
+## Code Standards
 
 ### TypeScript
 
-- ✅ Use TypeScript strict mode
-- ✅ Sempre defina tipos explícitos
-- ✅ Evite `any` - use tipos específicos ou `unknown`
-- ✅ Use interfaces para contratos públicos
-- ✅ Use types para unions e intersections
+- ✅ TypeScript strict mode
+- ✅ Always define explicit types
+- ✅ Avoid `any` - use specific types or `unknown`
+- ✅ Use interfaces for public contracts
+- ✅ Use types for unions and intersections
 
 ### Naming Conventions
 
 - **Classes**: PascalCase - `ValidationHelper`, `PasswordHelper`
-- **Interfaces**: PascalCase com prefixo `I` - `ILoggedUser`, `IExceptionResponse`
+- **Interfaces**: PascalCase with `I` prefix - `ILoggedUser`, `IExceptionResponse`
 - **Functions**: camelCase - `buildValidators`, `extractMessages`
 - **Constants**: SCREAMING_SNAKE_CASE - `DEFAULT_SALT_ROUNDS`
 - **Files**: kebab-case - `password.helper.ts`, `property.decorator.ts`
 
 ### Formatação
 
-O projeto usa **Prettier** e **ESLint**:
+The project uses **Prettier** and **ESLint**:
 
 ```bash
 npm run format
@@ -93,7 +87,7 @@ npm run lint
 npm run lint:fix
 ```
 
-**Configuração Prettier:**
+**Prettier Configuration:**
 
 ```json
 {
@@ -103,56 +97,56 @@ npm run lint:fix
 }
 ```
 
-### Comentários
+### Comments
 
-- ❌ Não adicione comentários óbvios
-- ✅ Documente funções públicas com JSDoc (apenas quando necessário)
-- ✅ Explique o "porquê", não o "como"
+- ❌ Do not add obvious comments
+- ✅ Document public functions with JSDoc (only when necessary)
+- ✅ Explain the *why*, not the *how*
 
-## Processo de Pull Request
+## Pull Request Process
 
-### 1. Antes de Submeter
+### 1. Before Submitting
 
-- ✅ Execute o linter: `npm run lint`
-- ✅ Formate o código: `npm run format`
-- ✅ Build com sucesso: `npm run build`
-- ✅ Atualize a documentação se necessário
+- ✅ Run the linter: `npm run lint`
+- ✅ Format the code: `npm run format`
+- ✅ Successful build: `npm run build`
+- ✅ Update documentation if needed
 
 ### 2. Commit Messages
 
-Use mensagens claras e descritivas:
+Use clear and descriptive messages:
 
 ```bash
-feat: adiciona validador de telefone brasileiro
-fix: corrige validação de CPF com pontuação
-docs: atualiza exemplos do PasswordHelper
-refactor: separa validadores em arquivos individuais
-test: adiciona testes para StringHelper
+feat: add Brazilian phone validator
+fix: fix CPF validation with punctuation
+docs: update PasswordHelper examples
+refactor: split validators into individual files
+test: add tests for StringHelper
 ```
 
-**Padrão:**
+**Pattern:**
 
 ```
-<tipo>: <descrição curta>
+<type>: <short description>
 
-<descrição detalhada opcional>
+<optional detailed description>
 
-<footer opcional>
+<optional footer>
 ```
 
-**Tipos:**
+**Types:**
 
-- `feat`: Nova funcionalidade
-- `fix`: Correção de bug
-- `docs`: Alterações na documentação
-- `refactor`: Refatoração de código
-- `test`: Adição ou correção de testes
-- `chore`: Tarefas de manutenção
-- `perf`: Melhorias de performance
+- `feat`: New Feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `refactor`: Code refactoring
+- `test`: Adding or fixing tests
+- `chore`: Maintenance tasks
+- `perf`: Performance improvements
 
-### 3. Criar Pull Request
+### 3. Create a Pull Request
 
-1. Push para seu fork
-2. Abra um Pull Request para a branch `main`
-3. Preencha o PR
-4. Aguarde a revisão
+1. Push to your fork
+2. Open a Pull Request to the `main` branch
+3. Fill in the PR template
+4. Wait for review
