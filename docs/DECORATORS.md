@@ -22,7 +22,7 @@ The `@Property` decorator combines class-validator, class-transformer and Swagge
 ### Import
 
 ```typescript
-import { Property, PropertyType } from '@augustopreis/nestjs-utils';
+import { Property, PropertyType } from 'nestjs-utils';
 ```
 
 ### Signature
@@ -167,7 +167,7 @@ export class CreateProductDTO {
 #### Enum Property
 
 ```typescript
-import { EStatus } from '@augustopreis/nestjs-utils';
+import { EStatus } from 'nestjs-utils';
 
 export class UpdateUserDTO {
   @Property({
@@ -232,7 +232,7 @@ Extracts the authenticated user object from the request (typically set by a JWT 
 ### Import
 
 ```typescript
-import { LoggedUser } from '@augustopreis/nestjs-utils';
+import { LoggedUser } from 'nestjs-utils';
 ```
 
 ### Signature
@@ -334,7 +334,7 @@ Automatically generates OpenAPI documentation for endpoints that return paginate
 ### Import
 
 ```typescript
-import { ApiPaginatedResponse } from '@augustopreis/nestjs-utils';
+import { ApiPaginatedResponse } from 'nestjs-utils';
 ```
 
 ### Signature
@@ -366,10 +366,7 @@ interface ApiPaginatedResponseOptions {
 #### Basic Paginated Response
 
 ```typescript
-import {
-  ApiPaginatedResponse,
-  PaginatedResponseDTO,
-} from '@augustopreis/nestjs-utils';
+import { ApiPaginatedResponse, PaginatedResponseDTO } from 'nestjs-utils';
 
 @Controller('users')
 export class UsersController {
@@ -417,7 +414,7 @@ Combines multiple NestJS decorators into a single, powerful endpoint definition.
 ### Import
 
 ```typescript
-import { Endpoint } from '@augustopreis/nestjs-utils';
+import { Endpoint } from 'nestjs-utils';
 import { RequestMethod } from '@nestjs/common';
 ```
 
@@ -461,7 +458,7 @@ interface IEndpointOptions {
 #### Basic GET Endpoint
 
 ```typescript
-import { Endpoint } from '@augustopreis/nestjs-utils';
+import { Endpoint } from 'nestjs-utils';
 import { RequestMethod } from '@nestjs/common';
 
 @Controller('users')
@@ -482,7 +479,7 @@ export class UsersController {
 #### POST Endpoint with Authentication and Validation
 
 ```typescript
-import { Endpoint, JwtAuthGuard } from '@augustopreis/nestjs-utils';
+import { Endpoint, JwtAuthGuard } from 'nestjs-utils';
 import { RequestMethod, HttpStatus } from '@nestjs/common';
 
 @Controller('users')
@@ -610,10 +607,7 @@ export class UsersController {
 #### With Custom Headers and Interceptors
 
 ```typescript
-import {
-  LoggingInterceptor,
-  TimeoutInterceptor,
-} from '@augustopreis/nestjs-utils';
+import { LoggingInterceptor, TimeoutInterceptor } from 'nestjs-utils';
 
 @Controller('reports')
 export class ReportsController {

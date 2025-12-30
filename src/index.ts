@@ -1,5 +1,5 @@
 /**
- * @augustopreis/nestjs-utils
+ * nestjs-utils
  *
  * Complete library of utilities for NestJS.
  * Provides reusable components to accelerate the development of

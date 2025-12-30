@@ -22,7 +22,7 @@ Provides standard audit fields (`id`, `status`, `createdAt`, `updatedAt`, `delet
 ### Import
 
 ```typescript
-import { BaseEntity, EStatus } from '@augustopreis/nestjs-utils';
+import { BaseEntity, EStatus } from 'nestjs-utils';
 ```
 
 ### Properties
@@ -182,7 +182,7 @@ await userRepository.save(user);
 
 ```typescript
 import { Entity, Column } from 'typeorm';
-import { BaseEntity } from '@augustopreis/nestjs-utils';
+import { BaseEntity } from 'nestjs-utils';
 
 @Entity('users')
 export class User extends BaseEntity {

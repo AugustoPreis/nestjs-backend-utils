@@ -23,7 +23,7 @@ Provides both synchronous and asynchronous methods for hashing and comparing pas
 ### Import
 
 ```typescript
-import { PasswordHelper } from '@augustopreis/nestjs-utils';
+import { PasswordHelper } from 'nestjs-utils';
 ```
 
 ### Methods
@@ -160,7 +160,7 @@ const hash = bcrypt.hashSync(password, salt);
 
 ```typescript
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { PasswordHelper } from '@augustopreis/nestjs-utils';
+import { PasswordHelper } from 'nestjs-utils';
 
 @Injectable()
 export class AuthService {
@@ -207,7 +207,7 @@ Helper class for advanced string manipulation.
 ### Import
 
 ```typescript
-import { StringHelper } from '@augustopreis/nestjs-utils';
+import { StringHelper } from 'nestjs-utils';
 ```
 
 ### Methods
@@ -457,7 +457,7 @@ Helper class for array manipulation and operations.
 ### Import
 
 ```typescript
-import { ArrayHelper } from '@augustopreis/nestjs-utils';
+import { ArrayHelper } from 'nestjs-utils';
 ```
 
 ### Methods
@@ -682,7 +682,7 @@ Helper class for number manipulation and formatting.
 ### Import
 
 ```typescript
-import { NumberHelper } from '@augustopreis/nestjs-utils';
+import { NumberHelper } from 'nestjs-utils';
 ```
 
 ### Methods
@@ -855,7 +855,7 @@ Helper class for object manipulation and operations.
 ### Import
 
 ```typescript
-import { ObjectHelper } from '@augustopreis/nestjs-utils';
+import { ObjectHelper } from 'nestjs-utils';
 ```
 
 ### Methods

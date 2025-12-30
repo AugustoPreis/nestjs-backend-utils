@@ -25,7 +25,7 @@ Removes whitespace from the beginning and end of a string.
 #### Import
 
 ```typescript
-import { Trim } from '@augustopreis/nestjs-utils';
+import { Trim } from 'nestjs-utils';
 ```
 
 #### Signature
@@ -59,7 +59,7 @@ Converts strings to lowercase.
 #### Import
 
 ```typescript
-import { ToLowerCase } from '@augustopreis/nestjs-utils';
+import { ToLowerCase } from 'nestjs-utils';
 ```
 
 #### Signature
@@ -111,7 +111,7 @@ Converts strings to uppercase.
 #### Import
 
 ```typescript
-import { ToUpperCase } from '@augustopreis/nestjs-utils';
+import { ToUpperCase } from 'nestjs-utils';
 ```
 
 #### Signature
@@ -164,7 +164,7 @@ Converts string values to numbers.
 #### Import
 
 ```typescript
-import { StringToNumber } from '@augustopreis/nestjs-utils';
+import { StringToNumber } from 'nestjs-utils';
 ```
 
 #### Signature
@@ -260,7 +260,7 @@ Converts string values to Date objects.
 #### Import
 
 ```typescript
-import { StringToDate } from '@augustopreis/nestjs-utils';
+import { StringToDate } from 'nestjs-utils';
 ```
 
 #### Signature
@@ -376,7 +376,7 @@ Converts string values to boolean.
 #### Import
 
 ```typescript
-import { StringToBoolean } from '@augustopreis/nestjs-utils';
+import { StringToBoolean } from 'nestjs-utils';
 ```
 
 #### Signature
@@ -493,7 +493,7 @@ Converts JSON string values to objects.
 #### Import
 
 ```typescript
-import { StringToJson } from '@augustopreis/nestjs-utils';
+import { StringToJson } from 'nestjs-utils';
 ```
 
 #### Signature
@@ -623,7 +623,7 @@ export class CreateUserDTO {
 Transformers can also be used through the `@Property` decorator:
 
 ```typescript
-import { Property, PropertyType } from '@augustopreis/nestjs-utils';
+import { Property, PropertyType } from 'nestjs-utils';
 
 export class CreateUserDTO {
   @Property({

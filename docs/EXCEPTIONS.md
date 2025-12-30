@@ -22,7 +22,7 @@ Catches all exceptions in the application and formats them into a consistent res
 ### Import
 
 ```typescript
-import { GlobalExceptionFilter } from '@augustopreis/nestjs-utils';
+import { GlobalExceptionFilter } from 'nestjs-utils';
 ```
 
 ### Basic Usage
@@ -31,7 +31,7 @@ import { GlobalExceptionFilter } from '@augustopreis/nestjs-utils';
 
 ```typescript
 import { NestFactory } from '@nestjs/core';
-import { GlobalExceptionFilter } from '@augustopreis/nestjs-utils';
+import { GlobalExceptionFilter } from 'nestjs-utils';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -49,7 +49,7 @@ bootstrap();
 ```typescript
 import { Module } from '@nestjs/common';
 import { APP_FILTER } from '@nestjs/core';
-import { GlobalExceptionFilter } from '@augustopreis/nestjs-utils';
+import { GlobalExceptionFilter } from 'nestjs-utils';
 
 @Module({
   providers: [
@@ -178,7 +178,7 @@ Utility class for creating standardized exception responses. Used internally by 
 ### Import
 
 ```typescript
-import { ExceptionResponse } from '@augustopreis/nestjs-utils';
+import { ExceptionResponse } from 'nestjs-utils';
 ```
 
 ### Interface
@@ -199,7 +199,7 @@ interface IExceptionResponse {
 
 ```typescript
 import { ExceptionFilter, Catch, ArgumentsHost } from '@nestjs/common';
-import { ExceptionResponse } from '@augustopreis/nestjs-utils';
+import { ExceptionResponse } from 'nestjs-utils';
 
 @Catch(CustomException)
 export class CustomExceptionFilter implements ExceptionFilter {
@@ -234,7 +234,7 @@ Standard configuration for `class-validator` validation pipe with sensible defau
 ### Import
 
 ```typescript
-import { ValidationPipeConfig } from '@augustopreis/nestjs-utils';
+import { ValidationPipeConfig } from 'nestjs-utils';
 ```
 
 ### Configuration
@@ -291,7 +291,7 @@ export class AppModule {}
 ### Custom Validation Pipe
 
 ```typescript
-import { ValidationPipeConfig } from '@augustopreis/nestjs-utils';
+import { ValidationPipeConfig } from 'nestjs-utils';
 
 const customConfig = ValidationPipeConfig.create({
   exceptionFactory: (errors) => {
@@ -343,7 +343,7 @@ import {
   GlobalExceptionFilter,
   ValidationPipeConfig,
   LoggingInterceptor,
-} from '@augustopreis/nestjs-utils';
+} from 'nestjs-utils';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
