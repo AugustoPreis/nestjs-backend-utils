@@ -1,7 +1,7 @@
 import { Type } from '@nestjs/common';
 
 /**
- * Opções para resposta paginada no Swagger
+ * ApiPaginatedResponse decorator options
  */
 export interface ApiPaginatedResponseOptions {
   type: Type<unknown>;

@@ -1,24 +1,24 @@
 /**
- * Interface para a estrutura de resposta de erro padronizada
+ * Padronized interface for exception responses
  */
 export interface IExceptionResponse {
   /**
-   * Mensagem principal do erro
+   * Error message
    */
   message: string;
 
   /**
-   * Array com todos os erros detalhados
+   * Detailed errors array
    */
   errors: string[];
 
   /**
-   * Status HTTP do erro
+   * HTTP status code (optional)
    */
   statusCode?: number;
 
   /**
-   * UUID para rastreamento de erros internos (opcional)
+   * UUID for internal error tracking (optional)
    */
   uuid?: string;
 }

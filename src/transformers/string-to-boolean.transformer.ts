@@ -3,7 +3,7 @@ import { Transform, TransformFnParams } from 'class-transformer';
 import { StringToBooleanOptions } from './interfaces/string-to-boolean-options.interface';
 
 /**
- * Converte string para boolean
+ * Converts string to boolean
  */
 export function StringToBoolean(
   options: StringToBooleanOptions = {},

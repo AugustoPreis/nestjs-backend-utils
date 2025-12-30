@@ -3,19 +3,19 @@ import { PropertyType } from '../decorators/property/enums/property-type.enum';
 import { EOrder } from '../enums/order.enum';
 
 /**
- * DTO base para filtros de listagem paginada
+ * Base DTO for paginated listing filters
  *
- * Fornece campos padrão para paginação e ordenação,
- * utilizados em endpoints de listagem.
+ * Provides standard fields for pagination and sorting,
+ * used in listing endpoints.
  */
 export class FindManyFiltersDTO {
   /**
-   * Limite de registros por página
+   * Records per page limit
    */
   @Property({
     type: PropertyType.NUMBER,
-    name: 'Registros por página',
-    description: 'Número de registros por página',
+    name: 'Records per page',
+    description: 'Number of records per page',
     required: false,
     defaultValue: 10,
     validation: {
@@ -26,12 +26,12 @@ export class FindManyFiltersDTO {
   public take: number = 10;
 
   /**
-   * Número da página
+   * Page number
    */
   @Property({
     type: PropertyType.NUMBER,
-    name: 'Número da página',
-    description: 'Número da página',
+    name: 'Page number',
+    description: 'Page number',
     required: false,
     defaultValue: 1,
     validation: {
@@ -42,24 +42,24 @@ export class FindManyFiltersDTO {
   public page: number = 1;
 
   /**
-   * Campo de ordenação
+   * Sort field
    */
   @Property({
     type: PropertyType.STRING,
-    name: 'Campo para ordenação',
-    description: 'Campo para ordenação',
+    name: 'Sort field',
+    description: 'Field for sorting',
     required: false,
     example: 'createdAt',
   })
   public sort?: string;
 
   /**
-   * Direção da ordenação
+   * Sort direction
    */
   @Property({
     type: PropertyType.ENUM,
-    name: 'Direção da ordenação',
-    description: 'Direção da ordenação',
+    name: 'Sort direction',
+    description: 'Sort direction',
     required: false,
     defaultValue: EOrder.DESC,
     enumValues: EOrder,
@@ -67,7 +67,7 @@ export class FindManyFiltersDTO {
   public order: EOrder = EOrder.DESC;
 
   /**
-   * Calcula o offset para a query
+   * Calculates the offset for the query
    */
   public getOffset(): number {
     const page = Math.max(1, this.page || 1);

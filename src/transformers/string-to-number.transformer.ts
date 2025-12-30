@@ -3,7 +3,7 @@ import { Transform, TransformFnParams } from 'class-transformer';
 import { StringToNumberOptions } from './interfaces/string-to-number-options.interface';
 
 /**
- * Converte string para número
+ * Converts string to number
  */
 export function StringToNumber(
   options: StringToNumberOptions = {},

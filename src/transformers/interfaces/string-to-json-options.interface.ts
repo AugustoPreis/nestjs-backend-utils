@@ -1,5 +1,5 @@
 /**
- * Opções do transformer StringToJson
+ * Options for StringToJson
  */
 export interface StringToJsonOptions {
   fallback?: unknown;

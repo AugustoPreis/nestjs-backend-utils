@@ -25,11 +25,11 @@ import { IEndpointOptions } from './interfaces/endpoint-options.interface';
 import { ArrayHelper } from '../helpers/array.helper';
 
 /**
- * Decorator para definir endpoints REST com diversas opções
+ * Decorator to define REST endpoints with various options
  *
- * Define endpoints de API REST com várias opções como método, caminho,
- * guards, interceptors, pipes, serialização, headers, autenticação e
- * documentação Swagger.
+ * Defines REST API endpoints with various options such as method, path,
+ * guards, interceptors, pipes, serialization, headers, authentication and
+ * Swagger documentation.
  */
 export function Endpoint(
   options: IEndpointOptions,

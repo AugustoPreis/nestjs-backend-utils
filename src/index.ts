@@ -1,9 +1,9 @@
 /**
  * @augustopreis/nestjs-utils
  *
- * Biblioteca completa de utilitários para NestJS.
- * Fornece componentes reutilizáveis para acelerar o desenvolvimento de
- * aplicações NestJS seguindo as melhores práticas.
+ * Complete library of utilities for NestJS.
+ * Provides reusable components to accelerate the development of
+ * NestJS applications following best practices.
  *
  * @packageDocumentation
  */

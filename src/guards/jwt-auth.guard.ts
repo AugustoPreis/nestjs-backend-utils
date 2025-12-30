@@ -6,10 +6,10 @@ import {
 } from '@nestjs/common';
 
 /**
- * Guard básico para autenticação JWT
+ * Basic guard for JWT authentication
  *
- * Verifica se existe um usuário na request (normalmente injetado
- * por um JwtStrategy ou middleware de autenticação).
+ * Checks if there is a user in the request (normally injected
+ * by a JwtStrategy or authentication middleware).
  */
 @Injectable()
 export class JwtAuthGuard implements CanActivate {
@@ -17,7 +17,7 @@ export class JwtAuthGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
 
     if (!request.user) {
-      throw new UnauthorizedException('Usuário não autenticado');
+      throw new UnauthorizedException('User not authenticated');
     }
 
     return true;

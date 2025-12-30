@@ -1,5 +1,5 @@
 /**
- * Opções do transformer StringToNumber
+ * Options for StringToNumber
  */
 export interface StringToNumberOptions {
   radix?: number;

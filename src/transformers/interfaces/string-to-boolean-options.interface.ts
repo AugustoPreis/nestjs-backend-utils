@@ -1,5 +1,5 @@
 /**
- * Opções do transformer StringToBoolean
+ * Options for StringToBoolean
  */
 export interface StringToBooleanOptions {
   trueValues?: string[];

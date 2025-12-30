@@ -1,11 +1,11 @@
 export interface IHttpErrorParam {
   /**
-   * Mensagem ou array de mensagens de erro
+   * Error message or array of error messages
    */
   message: string | string[];
 
   /**
-   * Mensagem de erro adicional (opcional)
+   * Additional error message (optional)
    */
   error?: string;
 }

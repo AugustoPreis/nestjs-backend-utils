@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 
 /**
- * Remove espaços em branco do início e fim da string
+ * Removes whitespace from beginning and end of string
  */
 export function Trim(): PropertyDecorator {
   return Transform(({ value }: TransformFnParams) => {

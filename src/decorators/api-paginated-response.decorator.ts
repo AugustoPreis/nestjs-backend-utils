@@ -4,10 +4,10 @@ import { applyDecorators, HttpStatus } from '@nestjs/common';
 import { ApiPaginatedResponseOptions } from './interfaces/api-paginated-response-options.interface';
 
 /**
- * Decorator para documentar respostas paginadas no Swagger
+ * Decorator to document paginated responses in Swagger
  *
- * Gera automaticamente a documentação para endpoints que retornam
- * dados paginados seguindo o padrão PaginatedResponseDTO.
+ * Automatically generates documentation for endpoints that return
+ * paginated data following the PaginatedResponseDTO pattern.
  */
 export function ApiPaginatedResponse(
   options: ApiPaginatedResponseOptions,
@@ -16,7 +16,7 @@ export function ApiPaginatedResponse(
     ApiExtraModels(options.type),
     ApiResponse({
       status: options.status || HttpStatus.OK,
-      description: options.description || 'Lista paginada',
+      description: options.description || 'Paginated list',
       schema: {
         allOf: [
           {
@@ -27,15 +27,15 @@ export function ApiPaginatedResponse(
               },
               total: {
                 type: 'number',
-                description: 'Total de registros',
+                description: 'Total records',
               },
               page: {
                 type: 'number',
-                description: 'Página atual',
+                description: 'Current page',
               },
               pages: {
                 type: 'number',
-                description: 'Total de páginas',
+                description: 'Total pages',
               },
             },
           },

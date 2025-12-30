@@ -5,33 +5,33 @@ import { ValidationError } from 'class-validator';
 import { extractValidationErrorMessages } from '../utils/class-validator.util';
 
 /**
- * Configuração padrão para o ValidationPipe
+ * Default configuration for ValidationPipe
  *
- * Define valores recomendados para validação e transformação
- * automática de dados em aplicações NestJS.
+ * Defines recommended values for validation and automatic
+ * data transformation in NestJS applications.
  */
 const DEFAULT_VALIDATION_OPTIONS: ValidationPipeOptions = {
-  whitelist: true, // Remove propriedades não decoradas
-  transform: true, // Habilita transformação automática de tipos
-  forbidNonWhitelisted: false, // Não rejeita propriedades extras
+  whitelist: true, // Removes non-decorated properties
+  transform: true, // Enables automatic type transformation
+  forbidNonWhitelisted: false, // Does not reject extra properties
   transformOptions: {
-    enableImplicitConversion: true, // Conversão automática de tipos
+    enableImplicitConversion: true, // Automatic type conversion
   },
 };
 
 /**
- * Classe helper para configurar ValidationPipe com tratamento de erros padronizado
+ * Helper class to configure ValidationPipe with standardized error handling
  *
- * Fornece configuração otimizada do ValidationPipe do NestJS com integração
- * automática ao sistema de exceções personalizado. Converte erros de validação
- * do class-validator em exceções formatadas.
+ * Provides optimized configuration of NestJS ValidationPipe with automatic
+ * integration to the custom exception system. Converts validation errors
+ * from class-validator into formatted exceptions.
  */
 export class ValidationPipeConfig {
   /**
-   * Configura o ValidationPipe global da aplicação
+   * Configures the application's global ValidationPipe
    *
-   * Aplica configurações padrão e integra com o sistema de exceções,
-   * convertendo automaticamente ValidationError[] em formato padronizado.
+   * Applies default settings and integrates with the exception system,
+   * automatically converting ValidationError[] to standardized format.
    */
   public static configure(
     app: INestApplication,
@@ -41,11 +41,11 @@ export class ValidationPipeConfig {
   }
 
   /**
-   * Cria a factory de exceções para o ValidationPipe
+   * Creates the exception factory for ValidationPipe
    *
-   * Converte array de ValidationError em BadRequestException
-   * que será capturada pelo GlobalExceptionFilter e formatada
-   * adequadamente.
+   * Converts ValidationError array to BadRequestException
+   * that will be caught by GlobalExceptionFilter and formatted
+   * appropriately.
    */
   private static createExceptionFactory(): (
     errors: ValidationError[],
@@ -58,9 +58,9 @@ export class ValidationPipeConfig {
   }
 
   /**
-   * Cria uma instância de ValidationPipe configurada
+   * Creates a configured ValidationPipe instance
    *
-   * Útil para aplicar validação em módulos ou controllers específicos.
+   * Useful for applying validation to specific modules or controllers.
    */
   public static create(options: ValidationPipeOptions = {}): ValidationPipe {
     return new ValidationPipe({

@@ -1,33 +1,33 @@
 export enum EValidationErrorMessages {
-  ARRAY = 'O campo "{field}" deve ser uma lista.',
-  MIN_ELEMENTS = 'O campo "{field}" deve ter no mínimo {min} elementos',
-  MAX_ELEMENTS = 'O campo "{field}" deve ter no máximo {max} elementos',
+  ARRAY = 'The field "{field}" must be an array.',
+  MIN_ELEMENTS = 'The field "{field}" must have at least {min} elements',
+  MAX_ELEMENTS = 'The field "{field}" must have at most {max} elements',
 
-  BOOLEAN = 'O campo "{field}" deve ser verdadeiro ou falso.',
+  BOOLEAN = 'The field "{field}" must be true or false.',
 
-  DATE = 'O campo "{field}" deve ser uma data válida.',
+  DATE = 'The field "{field}" must be a valid date.',
 
-  EMAIL = 'O campo "{field}" deve ser um e-mail válido.',
+  EMAIL = 'The field "{field}" must be a valid email.',
 
-  UUID = 'O campo "{field}" deve ser um UUID válido.',
+  UUID = 'The field "{field}" must be a valid UUID.',
 
-  URL = 'O campo "{field}" deve ser uma URL válida.',
+  URL = 'The field "{field}" must be a valid URL.',
 
-  OBJECT = 'O campo "{field}" deve ser um objeto.',
+  OBJECT = 'The field "{field}" must be an object.',
 
-  JSON = 'O campo "{field}" deve ser um JSON válido.',
+  JSON = 'The field "{field}" must be a valid JSON.',
 
-  ENUM = 'O campo "{field}" deve ser um dos seguintes valores: {values}.',
+  ENUM = 'The field "{field}" must be one of the following values: {values}.',
 
-  NUMBER = 'O campo "{field}" deve ser um número.',
-  INTEGER = 'O campo "{field}" deve ser um número inteiro.',
-  MIN = 'O campo "{field}" deve ser maior ou igual a {min}.',
-  MAX = 'O campo "{field}" deve ser menor ou igual a {max}.',
-  POSITIVE_NUMBER = 'O campo "{field}" deve ser um número positivo.',
-  NEGATIVE_NUMBER = 'O campo "{field}" deve ser um número negativo.',
+  NUMBER = 'The field "{field}" must be a number.',
+  INTEGER = 'The field "{field}" must be an integer.',
+  MIN = 'The field "{field}" must be greater than or equal to {min}.',
+  MAX = 'The field "{field}" must be less than or equal to {max}.',
+  POSITIVE_NUMBER = 'The field "{field}" must be a positive number.',
+  NEGATIVE_NUMBER = 'The field "{field}" must be a negative number.',
 
-  STRING = 'O campo "{field}" deve ser um texto.',
-  MIN_LENGTH = 'O campo "{field}" deve ter no mínimo {minLength} caracteres.',
-  MAX_LENGTH = 'O campo "{field}" deve ter no máximo {maxLength} caracteres.',
-  PATTERN = 'O campo "{field}" está em formato inválido.',
+  STRING = 'The field "{field}" must be a string.',
+  MIN_LENGTH = 'The field "{field}" must have at least {minLength} characters.',
+  MAX_LENGTH = 'The field "{field}" must have at most {maxLength} characters.',
+  PATTERN = 'The field "{field}" has an invalid format.',
 }

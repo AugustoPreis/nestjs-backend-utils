@@ -1,30 +1,30 @@
 /**
- * Helper para manipulação de arrays
+ * Helper for array manipulation
  */
 export class ArrayHelper {
   /**
-   * Verifica se array está vazio
+   * Checks if array is empty
    */
   public static isEmpty(arr: unknown): boolean {
     return !arr || !Array.isArray(arr) || arr.length === 0;
   }
 
   /**
-   * Verifica se é um array e se não está vazio
+   * Checks if it's an array and not empty
    */
   public static isNotEmpty<T>(arr: unknown): arr is T[] {
     return Array.isArray(arr) && arr.length > 0;
   }
 
   /**
-   * Remove duplicatas do array
+   * Removes duplicates from array
    */
   public static unique<T>(arr: T[]): T[] {
     return [...new Set(arr)];
   }
 
   /**
-   * Agrupa array por chave
+   * Groups array by key
    */
   public static groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
     const initialValue: Record<string, T[]> = {};
@@ -41,7 +41,7 @@ export class ArrayHelper {
   }
 
   /**
-   * Divide array em chunks
+   * Splits array into chunks
    */
   public static chunk<T>(arr: T[], size: number): T[][] {
     size = Math.max(1, size);
@@ -56,7 +56,7 @@ export class ArrayHelper {
   }
 
   /**
-   * Embaralha array
+   * Shuffles array
    */
   public static shuffle<T>(arr: T[]): T[] {
     const shuffled = [...arr];
@@ -71,28 +71,28 @@ export class ArrayHelper {
   }
 
   /**
-   * Diferença entre arrays
+   * Difference between arrays
    */
   public static difference<T>(arr1: T[], arr2: T[]): T[] {
     return arr1.filter((item) => !arr2.includes(item));
   }
 
   /**
-   * Interseção de arrays
+   * Intersection of arrays
    */
   public static intersection<T>(arr1: T[], arr2: T[]): T[] {
     return arr1.filter((item) => arr2.includes(item));
   }
 
   /**
-   * União de arrays
+   * Union of arrays
    */
   public static union<T>(...arrays: T[][]): T[] {
     return this.unique(arrays.flat());
   }
 
   /**
-   * Remove null/undefined do array
+   * Removes null/undefined from array
    */
   public static compact<T>(arr: (T | null | undefined)[]): T[] {
     return arr.filter((item) => item != null);

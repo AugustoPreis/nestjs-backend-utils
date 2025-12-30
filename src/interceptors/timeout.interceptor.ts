@@ -14,10 +14,10 @@ import {
 } from 'rxjs';
 
 /**
- * Interceptor para timeout de requisições
+ * Interceptor for request timeout
  *
- * Define um tempo máximo de execução para requisições,
- * lançando TimeoutException quando excedido.
+ * Defines a maximum execution time for requests,
+ * throwing TimeoutException when exceeded.
  */
 @Injectable()
 export class TimeoutInterceptor implements NestInterceptor {
@@ -34,7 +34,7 @@ export class TimeoutInterceptor implements NestInterceptor {
           return throwError(
             () =>
               new RequestTimeoutException(
-                `A consulta ao servidor excedeu o tempo limite de ${this.timeoutMs}ms`,
+                `The server query exceeded the timeout limit of ${this.timeoutMs}ms`,
               ),
           );
         }

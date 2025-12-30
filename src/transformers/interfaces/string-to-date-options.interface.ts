@@ -1,5 +1,5 @@
 /**
- * Opções do transformer StringToDate
+ * Options for StringToDate
  */
 export interface StringToDateOptions {
   format?: string;

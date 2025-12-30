@@ -8,10 +8,10 @@ import {
 import { catchError, Observable, tap, throwError } from 'rxjs';
 
 /**
- * Interceptor para logging de requisições
+ * Interceptor for request logging
  *
- * Registra informações sobre requisições e respostas,
- * incluindo tempo de execução e dados sensíveis filtrados.
+ * Logs information about requests and responses,
+ * including execution time and filtered sensitive data.
  */
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {

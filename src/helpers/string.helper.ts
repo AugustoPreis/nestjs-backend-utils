@@ -1,12 +1,12 @@
 /**
- * Helper para manipulação de strings
+ * Helper for string manipulation
  *
- * Fornece métodos utilitários para operações comuns com strings,
- * incluindo conversões de case, truncamento, mascaramento e geração.
+ * Provides utility methods for common string operations,
+ * including case conversions, truncation, masking and generation.
  */
 export class StringHelper {
   /**
-   * Converte primeira letra para maiúscula
+   * Converts first letter to uppercase
    */
   public static capitalize(
     str: string,
@@ -29,7 +29,7 @@ export class StringHelper {
   }
 
   /**
-   * Converte string para camelCase
+   * Converts string to camelCase
    */
   public static camelCase(str: string): string {
     return str
@@ -38,7 +38,7 @@ export class StringHelper {
   }
 
   /**
-   * Converte string para snake_case
+   * Converts string to snake_case
    */
   public static snakeCase(str: string): string {
     return str
@@ -49,7 +49,7 @@ export class StringHelper {
   }
 
   /**
-   * Converte string para kebab-case
+   * Converts string to kebab-case
    */
   public static kebabCase(str: string): string {
     return str
@@ -60,7 +60,7 @@ export class StringHelper {
   }
 
   /**
-   * Trunca string adicionando sufixo
+   * Truncates string adding suffix
    */
   public static truncate(
     str: string,
@@ -72,14 +72,14 @@ export class StringHelper {
   }
 
   /**
-   * Remove acentuação da string
+   * Removes accents from string
    */
   public static removeAccents(str: string): string {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
   /**
-   * Gera string aleatória
+   * Generates random string
    */
   public static randomString(length: number, charset?: string): string {
     const defaultCharset =
@@ -95,7 +95,7 @@ export class StringHelper {
   }
 
   /**
-   * Mascara string deixando apenas alguns caracteres visíveis
+   * Masks string leaving only some characters visible
    */
   public static mask(
     str: string,
@@ -111,14 +111,14 @@ export class StringHelper {
   }
 
   /**
-   * Verifica se string está vazia (null, undefined ou apenas espaços)
+   * Checks if string is empty (null, undefined or only spaces)
    */
   public static isEmpty(str: string | null | undefined): boolean {
     return !str || str.trim().length === 0;
   }
 
   /**
-   * Conta ocorrências de substring na string
+   * Counts occurrences of substring in string
    */
   public static countOccurrences(
     str: string,

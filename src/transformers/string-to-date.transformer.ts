@@ -5,7 +5,7 @@ import { Transform, TransformFnParams } from 'class-transformer';
 import { StringToDateOptions } from './interfaces/string-to-date-options.interface';
 
 /**
- * Converte string para Date
+ * Converts string to Date
  */
 export function StringToDate(
   options: StringToDateOptions = {},

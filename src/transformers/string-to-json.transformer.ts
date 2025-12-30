@@ -3,7 +3,7 @@ import { Transform, TransformFnParams } from 'class-transformer';
 import { StringToJsonOptions } from './interfaces/string-to-json-options.interface';
 
 /**
- * Converte string JSON para objeto
+ * Converts JSON string to object
  */
 export function StringToJson(
   options: StringToJsonOptions = {},

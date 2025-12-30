@@ -7,10 +7,10 @@ import {
 import { map, Observable } from 'rxjs';
 
 /**
- * Interceptor para padronizar formato de resposta
+ * Interceptor to standardize response format
  *
- * Transforma todas as respostas da aplicação em um formato padronizado
- * com campos success, data, timestamp e path.
+ * Transforms all application responses into a standardized format
+ * with success, data, timestamp and path fields.
  */
 @Injectable()
 export class TransformResponseInterceptor<T> implements NestInterceptor<

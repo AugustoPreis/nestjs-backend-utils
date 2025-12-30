@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 
 /**
- * Converte string para minúscula
+ * Converts string to lowercase
  */
 export function ToLowerCase(): PropertyDecorator {
   return Transform(({ value }: TransformFnParams) => {

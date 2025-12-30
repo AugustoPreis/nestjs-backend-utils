@@ -1,17 +1,17 @@
 /**
- * DTO para respostas simples com mensagem
+ * DTO for simple responses with message
  *
- * Estrutura padronizada para respostas que retornam apenas
- * uma mensagem de sucesso ou confirmação.
+ * Standardized structure for responses that return only
+ * a success or confirmation message.
  */
 export class MessageResponseDTO {
   /**
-   * Mensagem de resposta
+   * Response message
    */
   public message: string;
 
   /**
-   * Indica sucesso da operação
+   * Indicates operation success
    */
   public success?: boolean;
 

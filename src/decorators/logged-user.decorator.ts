@@ -3,20 +3,20 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { LoggedUserOptions } from './interfaces/logged-user-options.interface';
 
 /**
- * Decorator para injetar dados do usuário autenticado
+ * Decorator to inject authenticated user data
  *
- * Extrai os dados do usuário autenticado da request e injeta
- * no parâmetro do controller.
+ * Extracts authenticated user data from the request and injects
+ * it into the controller parameter.
  */
 export const LoggedUser = createParamDecorator(
   (data: string | LoggedUserOptions | undefined, ctx: ExecutionContext) => {
     const request = ctx.switchToHttp().getRequest();
     const user = request.user;
 
-    // Se não tem usuário e é required, lança erro
+    // If there is no user and it is required, throw an error
     const options = typeof data === 'object' ? data : { property: data };
     if (options.required !== false && !user) {
-      throw new Error('Usuário não autenticado');
+      throw new Error('User not authenticated');
     }
 
     if (options.property) {

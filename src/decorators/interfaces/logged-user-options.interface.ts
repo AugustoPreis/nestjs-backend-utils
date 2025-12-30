@@ -1,5 +1,5 @@
 /**
- * Opções para o decorator LoggedUser
+ * LoggedUser decorator options
  */
 export interface LoggedUserOptions {
   property?: string;

@@ -14,20 +14,20 @@ import { IHttpErrorParam } from './interfaces/http-error-param.interface';
 import { extractValidationErrorMessages } from '../utils/class-validator.util';
 
 /**
- * Filtro global para captura e tratamento de todas as exceções da aplicação
+ * Global filter for catching and handling all application exceptions
  *
- * Este filtro intercepta todos os erros lançados na aplicação e os converte
- * em respostas padronizadas, tratando diferentes tipos de exceções:
- * - ValidationError (erros de validação do class-validator)
- * - HttpException (erros HTTP explícitos do NestJS)
- * - Error genérico (erros não esperados)
+ * This filter intercepts all errors thrown in the application and converts them
+ * into standardized responses, handling different types of exceptions:
+ * - ValidationError (class-validator validation errors)
+ * - HttpException (explicit NestJS HTTP errors)
+ * - Generic Error (unexpected errors)
  */
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter {
   private readonly logger = new Logger(GlobalExceptionFilter.name);
 
   /**
-   * Método principal que captura e trata todas as exceções
+   * Main method that catches and handles all exceptions
    */
   public catch(exception: unknown, host: ArgumentsHost): void {
     if (this.isValidationError(exception)) {
@@ -42,7 +42,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
   }
 
   /**
-   * Verifica se o erro é um ValidationError
+   * Checks if the error is a ValidationError
    */
   private isValidationError(exception: unknown): boolean {
     return (
@@ -53,10 +53,10 @@ export class GlobalExceptionFilter implements ExceptionFilter {
   }
 
   /**
-   * Trata erros de validação do class-validator
+   * Handles class-validator validation errors
    *
-   * Extrai recursivamente todas as mensagens de erro,
-   * incluindo validações de objetos aninhados.
+   * Recursively extracts all error messages,
+   * including nested object validations.
    */
   private handleValidationError(
     errors: ValidationError[],
@@ -64,7 +64,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
   ): void {
     const errorMessages = extractValidationErrorMessages(errors);
     const firstMessage =
-      errorMessages[0] || 'Erro de validação nos dados fornecidos';
+      errorMessages[0] || 'Validation error in the provided data';
 
     const exceptionResponse = new ExceptionResponse(
       HttpStatus.BAD_REQUEST,
@@ -76,7 +76,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
   }
 
   /**
-   * Trata erros HTTP explícitos (HttpException)
+   * Handles explicit HTTP errors (HttpException)
    */
   private handleHttpException(
     exception: HttpException,
@@ -91,11 +91,11 @@ export class GlobalExceptionFilter implements ExceptionFilter {
   }
 
   /**
-   * Trata erros não esperados (Erro genérico)
+   * Handles unexpected errors (Generic Error)
    *
-   * Registra o erro completo no console com stack trace
-   * e retorna uma resposta genérica ao cliente com UUID
-   * para rastreamento.
+   * Logs the complete error to the console with stack trace
+   * and returns a generic response to the client with UUID
+   * for tracking.
    */
   private handleUnexpectedError(exception: unknown, host: ArgumentsHost): void {
     const timestamp = new Date().toISOString();
@@ -104,7 +104,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     const line = '='.repeat(80);
 
     this.logger.error(line);
-    this.logger.error('Erro inesperado capturado');
+    this.logger.error('Unexpected error caught');
     this.logger.error(`Timestamp: ${timestamp}`);
     this.logger.error(`UUID: ${uuid}`);
 

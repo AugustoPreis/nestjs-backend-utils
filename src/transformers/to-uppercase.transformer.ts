@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 
 /**
- * Converte string para maiúscula
+ * Converts string to uppercase
  */
 export function ToUpperCase(): PropertyDecorator {
   return Transform(({ value }: TransformFnParams) => {

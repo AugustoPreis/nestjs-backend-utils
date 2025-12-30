@@ -6,10 +6,10 @@ import { IExceptionResponse } from './interfaces/exception-response.interface';
 import { IHttpErrorParam } from './interfaces/http-error-param.interface';
 
 /**
- * Classe principal para padronização de respostas de erro HTTP
+ * Main class for standardizing HTTP error responses
  *
- * Fornece uma estrutura consistente para retornar erros ao cliente,
- * incluindo status HTTP, mensagem principal e array de erros detalhados.
+ * Provides a consistent structure for returning errors to the client,
+ * including HTTP status, main message and detailed error array.
  */
 export class ExceptionResponse implements IExceptionResponse {
   public readonly message: string;
@@ -30,7 +30,7 @@ export class ExceptionResponse implements IExceptionResponse {
   }
 
   /**
-   * Constrói o objeto de resposta padronizada
+   * Builds the standardized response object
    */
   public build(): IExceptionResponse {
     const response: IExceptionResponse = {
@@ -44,10 +44,10 @@ export class ExceptionResponse implements IExceptionResponse {
   }
 
   /**
-   * Envia automaticamente a resposta de erro ao cliente
+   * Automatically sends the error response to the client
    *
-   * Utiliza o ArgumentsHost do NestJS para enviar
-   * a resposta HTTP formatada.
+   * Uses NestJS ArgumentsHost to send
+   * the formatted HTTP response.
    */
   public send(host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
@@ -57,7 +57,7 @@ export class ExceptionResponse implements IExceptionResponse {
   }
 
   /**
-   * Cria uma ExceptionResponse a partir de um erro HTTP padrão
+   * Creates an ExceptionResponse from a standard HTTP error
    */
   public static fromHttpError(
     statusCode: HttpStatus,
@@ -68,7 +68,7 @@ export class ExceptionResponse implements IExceptionResponse {
     }
 
     if (Array.isArray(message.message)) {
-      const firstMessage = message.message[0] || 'Erro de validação';
+      const firstMessage = message.message[0] || 'Validation error';
       return new ExceptionResponse(statusCode, firstMessage, message.message);
     }
 
@@ -76,12 +76,12 @@ export class ExceptionResponse implements IExceptionResponse {
   }
 
   /**
-   * Cria uma ExceptionResponse para erros internos do servidor
+   * Creates an ExceptionResponse for internal server errors
    */
   public static internalError(uuid: string): ExceptionResponse {
     return new ExceptionResponse(
       HttpStatus.INTERNAL_SERVER_ERROR,
-      `Ocorreu um erro interno no servidor. ID: ${uuid}`,
+      `An internal server error occurred. ID: ${uuid}`,
       [],
       uuid,
     );

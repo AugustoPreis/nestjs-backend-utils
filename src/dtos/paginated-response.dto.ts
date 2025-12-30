@@ -1,27 +1,27 @@
 /**
- * DTO para resposta paginada
+ * DTO for paginated response
  *
- * Estrutura padronizada para respostas de endpoints que retornam
- * dados paginados.
+ * Standardized structure for endpoint responses that return
+ * paginated data.
  */
 export class PaginatedResponseDTO<T> {
   /**
-   * Array de dados
+   * Data array
    */
   public data: T[];
 
   /**
-   * Total de registros
+   * Total records
    */
   public total: number;
 
   /**
-   * Página atual
+   * Current page
    */
   public page?: number;
 
   /**
-   * Total de páginas
+   * Total pages
    */
   public pages?: number;
 

@@ -10,21 +10,21 @@ import {
 import { EStatus } from '../enums/status.enum';
 
 /**
- * Entidade base com campos comuns
+ * Base entity with common fields
  *
- * Fornece campos padrão para todas as entidades, incluindo
- * ID, status, timestamps e soft delete.
+ * Provides standard fields for all entities, including
+ * ID, status, timestamps and soft delete.
  */
 @Entity()
 export abstract class BaseEntity {
   /**
-   * ID autoincremental
+   * Auto-incremental ID
    */
   @PrimaryGeneratedColumn()
   public id!: number;
 
   /**
-   * Status do registro
+   * Record status
    */
   @Column({
     type: 'enum',
@@ -34,53 +34,53 @@ export abstract class BaseEntity {
   public status!: EStatus;
 
   /**
-   * Data de criação
+   * Creation date
    */
   @CreateDateColumn({ name: 'created_at' })
   public createdAt!: Date;
 
   /**
-   * Data da última atualização
+   * Last update date
    */
   @UpdateDateColumn({ name: 'updated_at' })
   public updatedAt!: Date;
 
   /**
-   * Data de soft delete
+   * Soft delete date
    */
   @DeleteDateColumn({ name: 'deleted_at', nullable: true })
   public deletedAt?: Date | null;
 
   /**
-   * Verifica se o registro está ativo
+   * Checks if the record is active
    */
   public isActive(): boolean {
     return this.status === EStatus.ACTIVE && !this.deletedAt;
   }
 
   /**
-   * Verifica se o registro está deletado
+   * Checks if the record is deleted
    */
   public isDeleted(): boolean {
     return this.status === EStatus.DELETED || !!this.deletedAt;
   }
 
   /**
-   * Verifica se o registro está inativo
+   * Checks if the record is inactive
    */
   public isInactive(): boolean {
     return this.status === EStatus.INACTIVE;
   }
 
   /**
-   * Ativa o registro
+   * Activates the record
    */
   public activate(): void {
     this.status = EStatus.ACTIVE;
   }
 
   /**
-   * Desativa o registro
+   * Deactivates the record
    */
   public deactivate(): void {
     this.status = EStatus.INACTIVE;
@@ -92,7 +92,7 @@ export abstract class BaseEntity {
   }
 
   /**
-   * Marca o registro como deletado (soft delete)
+   * Marks the record as deleted (soft delete)
    */
   public softDelete(): void {
     this.status = EStatus.DELETED;

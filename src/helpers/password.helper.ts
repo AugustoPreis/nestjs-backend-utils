@@ -1,47 +1,47 @@
 import * as bcrypt from 'bcrypt';
 
 /**
- * Helper para operações com senhas utilizando bcrypt
+ * Helper for password operations using bcrypt
  *
- * Fornece métodos síncronos e assíncronos para hash e comparação de senhas,
- * utilizando o algoritmo bcrypt com configuração de salt rounds.
+ * Provides synchronous and asynchronous methods for hashing and comparing passwords,
+ * using the bcrypt algorithm with salt rounds configuration.
  */
 export class PasswordHelper {
   /**
-   * Número padrão de salt rounds para hash
+   * Default number of salt rounds for hashing
    */
   private static defaultSaltRounds: number = 10;
 
   /**
-   * Define o número padrão de salt rounds
+   * Sets the default number of salt rounds
    */
   public static setSaltRounds(rounds: number): void {
     this.defaultSaltRounds = rounds;
   }
 
   /**
-   * Gera o salt de forma síncrona
+   * Generates salt synchronously
    */
   public static saltSync(rounds?: number): string {
     return bcrypt.genSaltSync(rounds || this.defaultSaltRounds);
   }
 
   /**
-   * Cria hash de senha de forma síncrona
+   * Creates password hash synchronously
    */
   public static hashSync(password: string, saltRounds?: number): string {
     return bcrypt.hashSync(password, saltRounds || this.defaultSaltRounds);
   }
 
   /**
-   * Compara senha com hash de forma síncrona
+   * Compares password with hash synchronously
    */
   public static compareSync(password: string, hashedPassword: string): boolean {
     return bcrypt.compareSync(password, hashedPassword);
   }
 
   /**
-   * Cria hash de senha de forma assíncrona
+   * Creates password hash asynchronously
    */
   public static async hash(
     password: string,
@@ -51,7 +51,7 @@ export class PasswordHelper {
   }
 
   /**
-   * Compara senha com hash de forma assíncrona
+   * Compares password with hash asynchronously
    */
   public static async compare(
     password: string,

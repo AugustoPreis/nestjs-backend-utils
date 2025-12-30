@@ -1,76 +1,76 @@
 # NestJS Utils
 
-Conjunto completo de utilitários, validadores, transformadores e helpers para aplicações NestJS.
+Complete set of utilities, validators, transformers and helpers for NestJS applications.
 
-## 📋 Índice
+## 📋 Table of Contents
 
-- [Características](#-características)
-- [Instalação](#-instalação)
-- [Configuração](#️-configuração)
-- [Documentação](#-documentação)
-- [Exemplos Rápidos](#-exemplos-rápidos)
-- [Contribuindo](#-contribuindo)
-- [Licença](#-licença)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Configuration](#️-configuration)
+- [Documentation](#-documentation)
+- [Quick Examples](#-quick-examples)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-## ✨ Características
+## ✨ Features
 
-### Sistema de Exceções
+### Exception System
 
-- **ExceptionResponse**: Classe padronizada para respostas de erro
-- **GlobalExceptionFilter**: Filtro global para captura e formatação de exceções
-- **ValidationPipeConfig**: Configuração otimizada do ValidationPipe
+- **ExceptionResponse**: Standardized class for error responses
+- **GlobalExceptionFilter**: Global filter for catching and formatting exceptions
+- **ValidationPipeConfig**: Optimized ValidationPipe configuration
 
-### Validadores Customizados
+### Custom Validators
 
-- Validadores para strings, números, datas, emails, UUIDs, URLs, JSON, arrays, objetos e enums
-- Suporte a transformação automática de dados
-- Mensagens de erro personalizáveis
+- Validators for strings, numbers, dates, emails, UUIDs, URLs, JSON, arrays, objects and enums
+- Support for automatic data transformation
+- Customizable error messages
 
-### Transformadores
+### Transformers
 
 - Trim, ToLowerCase, ToUpperCase
-- Conversão entre tipos (string ↔ number, string ↔ date, string ↔ boolean)
+- Type conversion (string ↔ number, string ↔ date, string ↔ boolean)
 - ParseJSON, StringifyJSON
 - Sanitize, RemoveSpaces, Slugify
 
 ### Helpers
 
-- **PasswordHelper**: Hash e comparação de senhas com bcrypt
-- **StringHelper**: Manipulação avançada de strings
-- **DateHelper**: Operações com datas usando date-fns
-- **ObjectHelper**: Manipulação de objetos (deepClone, deepMerge, pick, omit, flatten)
-- **ArrayHelper**: Operações com arrays (unique, groupBy, chunk, shuffle)
-- **NumberHelper**: Formatação e conversão de números
-- **ValidationHelper**: Validações brasileiras (CPF, CNPJ, telefone, CEP)
-- **CryptoHelper**: Operações criptográficas (hash, encrypt, decrypt, UUID)
+- **PasswordHelper**: Password hashing and comparison with bcrypt
+- **StringHelper**: Advanced string manipulation
+- **DateHelper**: Date operations using date-fns
+- **ObjectHelper**: Object manipulation (deepClone, deepMerge, pick, omit, flatten)
+- **ArrayHelper**: Array operations (unique, groupBy, chunk, shuffle)
+- **NumberHelper**: Number formatting and conversion
+- **ValidationHelper**: Brazilian validations (CPF, CNPJ, phone, ZIP code)
+- **CryptoHelper**: Cryptographic operations (hash, encrypt, decrypt, UUID)
 
 ### Decorators
 
-- **@Property()**: Decorator unificado para validação, transformação e documentação Swagger
-- **@LoggedUser()**: Extração de dados do usuário autenticado
-- **@ApiPaginatedResponse()**: Documentação Swagger para respostas paginadas
+- **@Property()**: Unified decorator for validation, transformation and Swagger documentation
+- **@LoggedUser()**: Authenticated user data extraction
+- **@ApiPaginatedResponse()**: Swagger documentation for paginated responses
 
 ### Guards & Interceptors
 
-- **JwtAuthGuard**: Guard de autenticação JWT
-- **TransformResponseInterceptor**: Padronização de respostas
-- **LoggingInterceptor**: Log de requisições e respostas
-- **TimeoutInterceptor**: Timeout configurável para requisições
+- **JwtAuthGuard**: JWT authentication guard
+- **TransformResponseInterceptor**: Response standardization
+- **LoggingInterceptor**: Request and response logging
+- **TimeoutInterceptor**: Configurable timeout for requests
 
 ### Database
 
-- **BaseEntity**: Entidade base com campos comuns e soft delete
-- **EStatus**: Enum para status de registros
+- **BaseEntity**: Base entity with common fields and soft delete
+- **EStatus**: Enum for record status
 
 ### DTOs
 
-- **FindManyFiltersDTO**: DTO base para paginação e filtros
-- **PaginatedResponseDTO**: DTO para respostas paginadas
-- **MessageResponseDTO**: DTO para mensagens simples
+- **FindManyFiltersDTO**: Base DTO for pagination and filters
+- **PaginatedResponseDTO**: DTO for paginated responses
+- **MessageResponseDTO**: DTO for simple messages
 
-## 🚀 Exemplos Rápidos
+## 🚀 Quick Examples
 
-### Decorator @Property
+### @Property Decorator
 
 ```typescript
 import { Property, PropertyType } from 'nestjs-utils';
@@ -78,31 +78,31 @@ import { Property, PropertyType } from 'nestjs-utils';
 export class CreateUserDTO {
   @Property({
     type: PropertyType.STRING,
-    name: 'Nome',
+    name: 'Name',
     required: true,
     transform: { trim: true },
     validation: { minLength: 3, maxLength: 100 },
-    description: 'Nome completo do usuário',
-    example: 'João Silva',
+    description: 'User full name',
+    example: 'John Doe',
   })
   name: string;
 
   @Property({
     type: PropertyType.EMAIL,
-    name: 'E-mail',
+    name: 'Email',
     required: true,
     transform: { trim: true, toLowerCase: true },
-    description: 'E-mail do usuário',
-    example: 'joao@example.com',
+    description: 'User email',
+    example: 'john@example.com',
   })
   email: string;
 
   @Property({
     type: PropertyType.NUMBER,
-    name: 'Idade',
+    name: 'Age',
     required: true,
     validation: { min: 18, max: 120, integerOnly: true },
-    description: 'Idade do usuário',
+    description: 'User age',
     example: 25,
   })
   age: number;
@@ -120,7 +120,7 @@ const isValid = await PasswordHelper.compare('myPassword123', hashedPassword);
 const masked = StringHelper.mask('12345678900', '###.###.###-##');
 ```
 
-### BaseEntity com Soft Delete
+### BaseEntity with Soft Delete
 
 ```typescript
 import { Entity, Column } from 'typeorm';
@@ -143,21 +143,21 @@ console.log(user.isActive());
 console.log(user.isDeleted());
 ```
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
-Contribuições são bem-vindas! Veja [CONTRIBUTING.md](./CONTRIBUTING.md) para mais detalhes.
+Contributions are welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](./LICENSE) para detalhes.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-## 👤 Autor
+## 👤 Author
 
 **Augusto Preis Tomasi**
 
 - Email: augustopreisthomasi@gmail.com
 - GitHub: [@augustopreis](https://github.com/augustopreis)
 
-## 🌟 Apoie o Projeto
+## 🌟 Support the Project
 
-Se este projeto te ajudou, considere dar uma ⭐️ no GitHub!
+If this project helped you, consider giving it a ⭐️ on GitHub!

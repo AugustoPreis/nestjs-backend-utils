@@ -1,19 +1,19 @@
 import { ArrayHelper } from './array.helper';
 
 /**
- * Helper para manipulação de objetos
+ * Helper for object manipulation
  *
  */
 export class ObjectHelper {
   /**
-   * Clone profundo de objeto
+   * Deep clone of object
    */
   public static deepClone<T>(obj: T): T {
     return JSON.parse(JSON.stringify(obj));
   }
 
   /**
-   * Merge profundo de objetos
+   * Deep merge of objects
    */
   public static deepMerge<T>(...objects: Partial<T>[]): Partial<T> {
     return objects.reduce((acc, obj) => {
@@ -34,7 +34,7 @@ export class ObjectHelper {
   }
 
   /**
-   * Seleciona apenas keys especificadas
+   * Picks only specified keys
    */
   public static pick<T extends object, K extends keyof T>(
     obj: T,
@@ -52,7 +52,7 @@ export class ObjectHelper {
   }
 
   /**
-   * Exclui keys especificadas
+   * Excludes specified keys
    */
   public static omit<T, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
     const result = { ...obj };
@@ -65,7 +65,7 @@ export class ObjectHelper {
   }
 
   /**
-   * Verifica se objeto está vazio
+   * Checks if object is empty
    */
   public static isEmpty(obj: unknown): boolean {
     if (!obj) return true;
@@ -78,7 +78,7 @@ export class ObjectHelper {
   }
 
   /**
-   * Comparação profunda de objetos
+   * Deep comparison of objects
    */
   public static isEqual(obj1: object, obj2: object): boolean {
     if (!this.isObject(obj1) || !this.isObject(obj2)) return false;
@@ -102,7 +102,7 @@ export class ObjectHelper {
   }
 
   /**
-   * Achata objeto aninhado
+   * Flattens nested object
    */
   public static flattenObject(
     obj: object,
@@ -129,7 +129,7 @@ export class ObjectHelper {
   }
 
   /**
-   * Desachata objeto
+   * Unflattens object
    */
   public static unflattenObject(
     obj: Record<string, unknown>,
@@ -157,7 +157,7 @@ export class ObjectHelper {
   }
 
   /**
-   * Verifica se é um objeto simples
+   * Checks if it's a plain object
    */
   public static isObject(obj: unknown): obj is Record<string, unknown> {
     return typeof obj === 'object' && obj !== null && !Array.isArray(obj);

@@ -3,10 +3,10 @@ import { ValidationError } from '@nestjs/common';
 import { EValidationErrorMessages } from '../constants/validation-error-messages.constant';
 
 /**
- * Extrai todas as mensagens de erro do array de ValidationError
+ * Extracts all error messages from ValidationError array
  *
- * Processa recursivamente erros de validação, incluindo
- * validações de objetos aninhados.
+ * Recursively processes validation errors, including
+ * nested object validations.
  */
 export function extractValidationErrorMessages(
   errors: ValidationError[],
