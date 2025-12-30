@@ -21,7 +21,7 @@ Standard DTO for list/search endpoints with pagination, ordering, and common fil
 ### Import
 
 ```typescript
-import { FindManyFiltersDTO } from 'nestjs-utils';
+import { FindManyFiltersDTO } from 'nestjs-backend-utils';
 ```
 
 ### Properties
@@ -73,7 +73,7 @@ enum EOrder {
 
 ```typescript
 import { Controller, Get, Query } from '@nestjs/common';
-import { FindManyFiltersDTO } from 'nestjs-utils';
+import { FindManyFiltersDTO } from 'nestjs-backend-utils';
 
 @Controller('users')
 export class UsersController {
@@ -100,7 +100,7 @@ GET /users?page=2&take=20&sort=name&order=ASC
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, ILike } from 'typeorm';
-import { FindManyFiltersDTO } from 'nestjs-utils';
+import { FindManyFiltersDTO } from 'nestjs-backend-utils';
 
 @Injectable()
 export class UsersService {
@@ -138,7 +138,7 @@ export class UsersService {
 #### Extending for Custom Filters
 
 ```typescript
-import { FindManyFiltersDTO } from 'nestjs-utils';
+import { FindManyFiltersDTO } from 'nestjs-backend-utils';
 import { IsOptional, IsEnum } from 'class-validator';
 
 enum UserRole {
@@ -188,7 +188,7 @@ Generic DTO for paginated API responses with data and metadata. Works with `@Api
 ### Import
 
 ```typescript
-import { PaginatedResponseDTO } from 'nestjs-utils';
+import { PaginatedResponseDTO } from 'nestjs-backend-utils';
 ```
 
 ### Generic Type
@@ -238,7 +238,7 @@ constructor(data: T[], total: number, page?: number, pageSize?: number)
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { PaginatedResponseDTO } from 'nestjs-utils';
+import { PaginatedResponseDTO } from 'nestjs-backend-utils';
 
 @Injectable()
 export class ProductsService {
@@ -263,7 +263,7 @@ export class ProductsService {
 
 ```typescript
 import { Controller, Get, Query } from '@nestjs/common';
-import { PaginatedResponseDTO } from 'nestjs-utils';
+import { PaginatedResponseDTO } from 'nestjs-backend-utils';
 import { Product } from './entities/product.entity';
 
 @Controller('products')
@@ -341,7 +341,7 @@ Standard response structure for operations that only need to return a message (s
 ### Import
 
 ```typescript
-import { MessageResponseDTO } from 'nestjs-utils';
+import { MessageResponseDTO } from 'nestjs-backend-utils';
 ```
 
 ### Structure
@@ -358,7 +358,7 @@ import { MessageResponseDTO } from 'nestjs-utils';
 
 ```typescript
 import { Controller, Delete, Param } from '@nestjs/common';
-import { MessageResponseDTO } from 'nestjs-utils';
+import { MessageResponseDTO } from 'nestjs-backend-utils';
 
 @Controller('users')
 export class UsersController {
@@ -387,7 +387,7 @@ export class UsersController {
 
 ```typescript
 import { ApiResponse } from '@nestjs/swagger';
-import { MessageResponseDTO } from 'nestjs-utils';
+import { MessageResponseDTO } from 'nestjs-backend-utils';
 
 @Delete(':id')
 @ApiResponse({

@@ -1,6 +1,6 @@
 # NestJS Utils
 
-[![npm version](https://badge.fury.io/js/nestjs-utils.svg)](https://www.npmjs.com/package/nestjs-utils)
+[![npm version](https://badge.fury.io/js/nestjs-backend-utils.svg)](https://www.npmjs.com/package/nestjs-backend-utils)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![NestJS](https://img.shields.io/badge/NestJS-10.0+-red.svg)](https://nestjs.com/)
@@ -20,7 +20,7 @@ Complete set of utilities, validators, transformers and helpers for NestJS appli
 ## Installation
 
 ```bash
-npm install nestjs-utils
+npm install nestjs-backend-utils
 ```
 
 ## Documentation

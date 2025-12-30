@@ -31,8 +31,8 @@ Existem várias formas de contribuir:
 ### 1. Fork e Clone
 
 ```bash
-git clone https://github.com/AugustoPreis/nestjs-utils.git
-cd nestjs-utils
+git clone https://github.com/AugustoPreis/nestjs-backend-utils.git
+cd nestjs-backend-utils
 ```
 
 ### 2. Instalar Dependências

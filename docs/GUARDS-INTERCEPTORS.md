@@ -26,7 +26,7 @@ Guard that validates JWT tokens and protects routes from unauthorized access. Ex
 ### Import
 
 ```typescript
-import { JwtAuthGuard } from 'nestjs-utils';
+import { JwtAuthGuard } from 'nestjs-backend-utils';
 ```
 
 ### Setup
@@ -95,7 +95,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
 ```typescript
 import { Controller, Get, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'nestjs-utils';
+import { JwtAuthGuard } from 'nestjs-backend-utils';
 
 @Controller('users')
 export class UsersController {
@@ -134,7 +134,7 @@ export class ProductsController {
 #### With Endpoint Decorator
 
 ```typescript
-import { Endpoint, JwtAuthGuard } from 'nestjs-utils';
+import { Endpoint, JwtAuthGuard } from 'nestjs-backend-utils';
 
 @Controller('orders')
 export class OrdersController {
@@ -269,7 +269,7 @@ Logs request details (method, URL, body) and response details (status code, dura
 ### Import
 
 ```typescript
-import { LoggingInterceptor } from 'nestjs-utils';
+import { LoggingInterceptor } from 'nestjs-backend-utils';
 ```
 
 ### Basic Usage
@@ -279,7 +279,7 @@ import { LoggingInterceptor } from 'nestjs-utils';
 ```typescript
 import { Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { LoggingInterceptor } from 'nestjs-utils';
+import { LoggingInterceptor } from 'nestjs-backend-utils';
 
 @Module({
   providers: [
@@ -296,7 +296,7 @@ export class AppModule {}
 
 ```typescript
 import { Controller, UseInterceptors } from '@nestjs/common';
-import { LoggingInterceptor } from 'nestjs-utils';
+import { LoggingInterceptor } from 'nestjs-backend-utils';
 
 @Controller('users')
 @UseInterceptors(LoggingInterceptor)
@@ -409,7 +409,7 @@ Automatically cancels requests that take longer than the specified timeout durat
 ### Import
 
 ```typescript
-import { TimeoutInterceptor } from 'nestjs-utils';
+import { TimeoutInterceptor } from 'nestjs-backend-utils';
 ```
 
 ### Basic Usage
@@ -419,7 +419,7 @@ import { TimeoutInterceptor } from 'nestjs-utils';
 ```typescript
 import { Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { TimeoutInterceptor } from 'nestjs-utils';
+import { TimeoutInterceptor } from 'nestjs-backend-utils';
 
 @Module({
   providers: [
@@ -436,7 +436,7 @@ export class AppModule {}
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { TimeoutInterceptor } from 'nestjs-utils';
+import { TimeoutInterceptor } from 'nestjs-backend-utils';
 
 @Injectable()
 export class CustomTimeoutInterceptor extends TimeoutInterceptor {
@@ -544,7 +544,7 @@ Wraps all successful responses in a consistent structure with data, metadata, an
 ### Import
 
 ```typescript
-import { TransformResponseInterceptor } from 'nestjs-utils';
+import { TransformResponseInterceptor } from 'nestjs-backend-utils';
 ```
 
 ### Basic Usage
@@ -554,7 +554,7 @@ import { TransformResponseInterceptor } from 'nestjs-utils';
 ```typescript
 import { Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { TransformResponseInterceptor } from 'nestjs-utils';
+import { TransformResponseInterceptor } from 'nestjs-backend-utils';
 
 @Module({
   providers: [
@@ -602,7 +602,7 @@ export class AppModule {}
 
 ```typescript
 import { Controller, UseInterceptors } from '@nestjs/common';
-import { TransformResponseInterceptor } from 'nestjs-utils';
+import { TransformResponseInterceptor } from 'nestjs-backend-utils';
 
 @Controller('users')
 @UseInterceptors(TransformResponseInterceptor)
@@ -770,7 +770,7 @@ import {
   TimeoutInterceptor,
   TransformResponseInterceptor,
   ValidationPipeConfig,
-} from 'nestjs-utils';
+} from 'nestjs-backend-utils';
 
 @Module({
   providers: [
@@ -806,7 +806,7 @@ export class AppModule {}
 
 ```typescript
 import { Controller, Get, Post, Body, UseGuards } from '@nestjs/common';
-import { LoggedUser, Public } from 'nestjs-utils';
+import { LoggedUser, Public } from 'nestjs-backend-utils';
 
 @Controller('api')
 export class ApiController {

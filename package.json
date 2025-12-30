@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-utils",
+  "name": "nestjs-backend-utils",
   "version": "1.0.0",
   "description": "Complete set of utilities, validators, transformers and helpers for NestJS applications - Accelerate your development with reusable components following best practices",
   "author": "Augusto Preis Tomasi <augustopreisthomasi@gmail.com>",
@@ -8,12 +8,12 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AugustoPreis/nestjs-utils.git"
+    "url": "git+https://github.com/AugustoPreis/nestjs-backend-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/AugustoPreis/nestjs-utils/issues"
+    "url": "https://github.com/AugustoPreis/nestjs-backend-utils/issues"
   },
-  "homepage": "https://github.com/AugustoPreis/nestjs-utils#readme",
+  "homepage": "https://github.com/AugustoPreis/nestjs-backend-utils#readme",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
