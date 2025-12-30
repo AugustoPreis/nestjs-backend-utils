@@ -1,6 +1,11 @@
 # NestJS Utils
 
-Complete set of utilities, validators, transformers and helpers for NestJS applications.
+[![npm version](https://badge.fury.io/js/@augustopreis%2Fnestjs-utils.svg)](https://www.npmjs.com/package/@augustopreis/nestjs-utils)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-10.0+-red.svg)](https://nestjs.com/)
+
+Complete set of utilities, validators, transformers and helpers for NestJS applications - Accelerate your development with reusable components following best practices.
 
 ## Table of Contents
 

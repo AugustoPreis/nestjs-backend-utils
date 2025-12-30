@@ -1,8 +1,8 @@
 {
-  "author": "Augusto Preis Tomasi <augustopreisthomasi@gmail.com>",
-  "name": "nestjs-utils",
+  "name": "@augustopreis/nestjs-utils",
   "version": "1.0.0",
-  "description": "Conjunto completo de utilitários, validadores e helpers para NestJS",
+  "description": "Complete set of utilities, validators, transformers and helpers for NestJS applications - Accelerate your development with reusable components following best practices",
+  "author": "Augusto Preis Tomasi <augustopreisthomasi@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,21 +16,51 @@
   "homepage": "https://github.com/AugustoPreis/nestjs-utils#readme",
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run clean && npm run type-check && npm run build"
   },
   "keywords": [
     "nestjs",
+    "nest",
     "utils",
+    "utilities",
     "validators",
+    "validation",
     "helpers",
     "decorators",
     "typescript",
     "exceptions",
-    "filters"
+    "filters",
+    "guards",
+    "interceptors",
+    "transformers",
+    "dtos",
+    "typeorm",
+    "swagger",
+    "openapi",
+    "api",
+    "rest",
+    "backend",
+    "framework",
+    "jwt",
+    "authentication",
+    "pagination",
+    "error-handling"
   ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist",
     "README.md",

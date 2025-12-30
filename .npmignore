@@ -1,11 +1,49 @@
-src/
+# Development files
+*.test.ts
+*.spec.ts
 test/
 coverage/
-*.spec.ts
-*.test.ts
+.vscode/
+.idea/
+
+# Config files
 tsconfig.json
 eslint.config.mjs
 .prettierrc
+
+# Source files (only dist should be published)
+src/
+
+# Documentation sources
+docs/
+CONTRIBUTING.md
+
+# Git
+.git/
 .gitignore
-.npmignore
+.gitattributes
+
+# CI/CD
+.github/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
 TODO.md
+
+# NPM
+.npmignore
+package-lock.json
+yarn.lock
